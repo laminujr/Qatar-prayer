@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qatar Prayer Times</title>
+  <style>
+    body { font-family: Arial; background: #0a192f; color: white; text-align: center; padding: 20px; }
+    h1 { color: #64ffda; }
+    .prayer { background: #112240; margin: 10px; padding: 15px; border-radius: 10px; }
+    .time { font-size: 24px; font-weight: bold; color: #64ffda; }
+  </style>
 </head>
-
 <body>
+  <h1>🕌 Qatar Prayer Times</h1>
+  <div id="date"></div>
   
-</body>
+  <div class="prayer"><div>Fajr</div><div class="time">04:30 AM</div></div>
+  <div class="prayer"><div>Dhuhr</div><div class="time">11:45 AM</div></div>
+  <div class="prayer"><div>Asr</div><div class="time">03:00 PM</div></div>
+  <div class="prayer"><div>Maghrib</div><div class="time">05:30 PM</div></div>
+  <div class="prayer"><div>Isha</div><div class="time">07:00 PM</div></div>
 
+  <script>
+    document.getElementById('date').innerText = new Date().toDateString();
+  </script>
+</body>
 </html>
