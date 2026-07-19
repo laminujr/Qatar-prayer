@@ -40,4 +40,19 @@ h1 {
 
 <script>
 // This fetches prayer times for Doha, Qatar
-fetch("https://api.aladhan.com/v1/timingsByCity?city=Doha&
+fetch("https://api.aladhan.com/v1/timingsByCity?city=Doha&country=Qatar&method=8")
+.then(res => res.json())
+.then(data => {
+  const times = data.data.timings;
+  document.getElementById('prayers').innerHTML = `
+    <div class="prayer-card"><div class="prayer-name">Fajr</div><div class="prayer-time">${times.Fajr}</div></div>
+    <div class="prayer-card"><div class="prayer-name">Dhuhr</div><div class="prayer-time">${times.Dhuhr}</div></div>
+    <div class="prayer-card"><div class="prayer-name">Asr</div><div class="prayer-time">${times.Asr}</div></div>
+    <div class="prayer-card"><div class="prayer-name">Maghrib</div><div class="prayer-time">${times.Maghrib}</div></div>
+    <div class="prayer-card"><div class="prayer-name">Isha</div><div class="prayer-time">${times.Isha}</div></div>
+  `;
+})
+.catch(err => document.getElementById('prayers').innerHTML = "Error loading times");
+</script>
+</body>
+</html>
